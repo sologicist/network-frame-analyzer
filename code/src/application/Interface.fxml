@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.stage.Stage?>
+
+<Stage fx:id="stage" minHeight="801.0" minWidth="1000.0" title="Wirefish" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+    <scene>
+        <Scene>
+            <AnchorPane fx:id="anchor" prefHeight="903.0" prefWidth="1750.0">
+            <children>
+               <TableView fx:id="flowgraph" layoutX="-6.0" layoutY="136.0" prefHeight="507.0" prefWidth="1718.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="136.0">
+                 <columns>
+                   <TableColumn fx:id="frame" prefWidth="75.0" sortable="false" text="Num°" />
+                   <TableColumn fx:id="portsrc" prefWidth="69.0" sortable="false" text="Port Src." />
+                     <TableColumn fx:id="arrow" prefWidth="900.0" sortable="false" text="Flux" />
+                     <TableColumn fx:id="portdest" minWidth="0.0" prefWidth="83.0" sortable="false" text="Port Dest." />
+                     <TableColumn fx:id="comment" minWidth="0.0" prefWidth="900.0" sortable="false" text="Commentaire" />
+                 </columns>
+               </TableView>
+               <Label fx:id="ipsource" layoutX="123.0" layoutY="94.0" prefHeight="29.0" prefWidth="361.0" text="IP Source">
+                  <font>
+                     <Font size="18.0" />
+                  </font></Label>
+               <Label fx:id="ipdestfinale" layoutX="901.0" layoutY="94.0" prefHeight="29.0" prefWidth="373.0" text="IP Destination">
+                  <font>
+                     <Font size="18.0" />
+                  </font></Label>
+               <MenuBar prefHeight="27.0" prefWidth="1752.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                 <menus>
+                   <Menu mnemonicParsing="false" text="Fichier">
+                     <items>
+                       <MenuItem fx:id="importfile" mnemonicParsing="false" onAction="#importpath" text="Importer" />
+                     </items>
+                   </Menu>
+                 </menus>
+               </MenuBar>
+               <Label fx:id="flow" layoutX="76.0" layoutY="57.0" text="Flow :">
+                  <font>
+                     <Font size="16.0" />
+                  </font></Label>
+               <Label fx:id="ipdest" layoutX="1070.0" layoutY="56.0" text="IP Destination :">
+                  <font>
+                     <Font size="15.0" />
+                  </font></Label>
+               <ButtonBar layoutX="582.0" layoutY="657.0" prefHeight="40.0" prefWidth="200.0" />
+               <Label fx:id="ipsrc" layoutX="521.0" layoutY="57.0" text="IP Source :">
+                  <font>
+                     <Font size="15.0" />
+                  </font></Label>
+             <Button fx:id="visu" alignment="CENTER" layoutX="730.0" layoutY="665.0" mnemonicParsing="false" onAction="#printtab" prefHeight="24.0" prefWidth="247.0" text="Visualiser" textAlignment="CENTER" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="730.0" AnchorPane.rightAnchor="736.0" />
+               <ChoiceBox fx:id="protocol" layoutX="145.0" layoutY="55.0" prefWidth="150.0" />
+               <ChoiceBox fx:id="src" layoutX="628.0" layoutY="55.0" prefHeight="24.0" prefWidth="217.0" />
+               <ChoiceBox fx:id="dest" layoutX="1202.0" layoutY="53.0" prefHeight="24.0" prefWidth="244.0" />
+            </children></AnchorPane>
+        </Scene>
+    </scene>
+</Stage>
